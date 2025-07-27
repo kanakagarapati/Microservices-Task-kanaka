@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
-const port = 3001;
+//const port = 3001;
+const PORT = process.env.PORT || 3001;
 
 app.get('/health', (req, res) => {
   res.json({ status: 'Product Service is healthy' });

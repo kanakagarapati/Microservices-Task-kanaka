@@ -6,15 +6,15 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: gateway-service
+      app: gateway
   template:
     metadata:
       labels:
-        app: gateway-service
+        app: gateway
     spec:
       containers:
-        - name: gateway-service
-          image: garapatimanoj/mskanaka-gateway-servics:latest
+        - name: gateway
+          image: garapatimanoj/gkm-gateway-service:latest
           ports:
             - containerPort: 3003
           env:
@@ -22,11 +22,11 @@ spec:
               value: "3003"
           resources:
             requests:
+              cpu: "100m"
               memory: "128Mi"
-              cpu: "250m"
             limits:
+              cpu: "200m"
               memory: "256Mi"
-              cpu: "500m"
           livenessProbe:
             httpGet:
               path: /
@@ -38,4 +38,4 @@ spec:
               path: /
               port: 3003
             initialDelaySeconds: 5
-            periodSeconds: 3
+            periodSeconds: 5

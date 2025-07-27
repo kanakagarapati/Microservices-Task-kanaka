@@ -6,15 +6,15 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: order-service
+      app: order
   template:
     metadata:
       labels:
-        app: order-service
+        app: order
     spec:
       containers:
-        - name: order-service
-          image: garapatimanoj/mskanaka-order-servics:latest
+        - name: order
+          image: garapatimanoj/gkm-order-service:latest
           ports:
             - containerPort: 3002
           env:
@@ -22,11 +22,11 @@ spec:
               value: "3002"
           resources:
             requests:
+              cpu: "100m"
               memory: "128Mi"
-              cpu: "250m"
             limits:
+              cpu: "200m"
               memory: "256Mi"
-              cpu: "500m"
           livenessProbe:
             httpGet:
               path: /
@@ -38,4 +38,4 @@ spec:
               path: /
               port: 3002
             initialDelaySeconds: 5
-            periodSeconds: 3
+            periodSeconds: 5
