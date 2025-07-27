@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: order-service
-          image: garapatimanoj/order-service:latest
+          image: garapatimanoj/mskanaka-order-servics:latest
           ports:
             - containerPort: 3002
           env:

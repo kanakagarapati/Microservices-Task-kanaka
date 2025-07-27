@@ -13,8 +13,8 @@ spec:
         app: user-service
     spec:
       containers:
-      - name: user
-        image: garapatimanoj/user-service:latest
+      - name: user-service
+        image: garapatimanoj/mskanaka-user-servics:latest
         ports:
         - containerPort: 3000
         env:

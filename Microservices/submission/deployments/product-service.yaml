@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: product-service
-          image: garapatimanoj/product-service:latest
+          image: garapatimanoj/mskanaka-product-servics:latest
           ports:
             - containerPort: 3001
           env:

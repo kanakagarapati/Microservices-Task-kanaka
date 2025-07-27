@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: gateway-service
-          image: garapatimanoj/gateway-service:latest
+          image: garapatimanoj/mskanaka-gateway-servics:latest
           ports:
             - containerPort: 3003
           env:
